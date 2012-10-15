@@ -1,0 +1,30 @@
+@(employeeForm: Form[Employee])
+
+@import helper._
+
+<html>
+<head>
+    <title>ユーザー登録</title>
+</head>
+<body>
+<h1>ユーザ登録</h1>
+
+@helper.form(action = routes.EmployeeController.register) {
+  <fieldset>
+      @inputText(
+      employeeForm("name"),
+      '_label -> "名前"
+      )
+      @inputText(
+      employeeForm("mail"),
+      '_label -> "メールアドレス"
+      )
+      @inputText(
+      employeeForm("age"),
+      '_label -> "年齢"
+      )
+  </fieldset>
+  <input type="submit" class="btn primary" value="登録">
+}
+</body>
+</html>
